@@ -1,0 +1,7 @@
+.main {
+    grid-area: m;
+    background: bisque;
+}
+.main img {
+    width: 50px;
+}

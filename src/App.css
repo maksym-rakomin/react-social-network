@@ -9,19 +9,3 @@
   width: 1200px;
   margin: 0 auto;
 }
-
-.header {
-  grid-area: h;
-}
-.header img {
-  width: 40px;
-  height: auto;
-}
-
-.nav {
-  grid-area: n;
-}
-
-.main {
-  grid-area: m;
-}

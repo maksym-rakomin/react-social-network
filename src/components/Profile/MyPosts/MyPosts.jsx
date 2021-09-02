@@ -9,7 +9,10 @@ const MyPosts = () => {
             <div>new post</div>
 
             <div>
-                <Post />
+                <Post test='test1' message="Hi, how are you"/>
+                <Post test='test2' message="This is my first post"/>
+                <Post test='test3' />
+                <Post test='test5' />
             </div>
         </div>
     )

@@ -1,10 +1,10 @@
 import React from 'react'
 import c from "./Post.module.css"
 
-const Post = () => {
+const Post = (props) => {
     return (
         <div>
-            Post
+            { props.test }, { props.message }
         </div>
     )
 }

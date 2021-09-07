@@ -1,4 +1,25 @@
 .navbar {
     background: aquamarine;
     grid-area: n;
+    padding: 20px;
+}
+
+.navbar__link {
+    color: white;
+    text-decoration: none;
+    padding: 3px 5px;
+    display: block;
+}
+
+.navbar__link.active {
+    color: gold;
+}
+
+.navbar__list {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar__item {
+    margin-bottom: 5px;
 }

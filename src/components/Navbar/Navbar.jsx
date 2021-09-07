@@ -1,24 +1,25 @@
 import React from "react";
-import c from "./Navbar.module.css";
+import s from "./Navbar.module.css";
+import {NavLink} from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <nav className={c.navbar}>
-            <ul className={c.navbar__list}>
-                <li className={c.navbar__item}>
-                    <a href="/profile" className={c.navbar__link}>Profile</a>
+        <nav className={s.navbar}>
+            <ul className={s.navbar__list}>
+                <li className={s.navbar__item}>
+                    <NavLink to="/profile" className={s.navbar__link} activeClassName={s.active}>Profile</NavLink>
                 </li>
-                <li className={c.navbar__item}>
-                    <a href="/dialogs" className={c.navbar__link}>Messages</a>
+                <li className={s.navbar__item}>
+                    <NavLink to="/dialogs" className={s.navbar__link} activeClassName={s.active}>Messages</NavLink>
                 </li>
-                <li className={c.navbar__item}>
-                    <a href="/news" className={c.navbar__link}>News</a>
+                <li className={s.navbar__item}>
+                    <NavLink to="/news" className={s.navbar__link} activeClassName={s.active}>News</NavLink>
                 </li>
-                <li className={c.navbar__item}>
-                    <a href="/music" className={c.navbar__link}>Music</a>
+                <li className={s.navbar__item}>
+                    <NavLink to="/music" className={s.navbar__link} activeClassName={s.active}>Music</NavLink>
                 </li>
-                <li className={c.navbar__item}>
-                    <a href="/settings" className={c.navbar__link}>Settings</a>
+                <li className={s.navbar__item}>
+                    <NavLink to="/settings" className={s.navbar__link} activeClassName={s.active}>Settings</NavLink>
                 </li>
             </ul>
         </nav>

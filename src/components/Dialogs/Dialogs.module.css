@@ -15,7 +15,9 @@
     color: bisque;
 }
 
-.dialogs__link {}
+.dialogs__link {
+    text-decoration: none;
+}
 
 .messages {
     padding: 10px;

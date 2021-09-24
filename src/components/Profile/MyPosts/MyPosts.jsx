@@ -12,12 +12,14 @@ const MyPosts = () => {
         {id: 5, message: 'test post 5', likesCount: 1},
     ]
 
+    const postElements = posts.map(post => <Post key={post.id} test={post.likesCount} message={post.message}/>)
+
     return (
         <div className={c.myPosts}>
             <h3>my Posts</h3>
 
             <div>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <textarea name="" id="" cols="30" rows="10"/>
             </div>
 
             <div>
@@ -25,10 +27,7 @@ const MyPosts = () => {
             </div>
 
             <div>
-                <Post test='test1' message="Hi, how are you"/>
-                <Post test='test2' message="This is my first post"/>
-                <Post test='test3'/>
-                <Post test='test5'/>
+                {postElements}
             </div>
         </div>
     )

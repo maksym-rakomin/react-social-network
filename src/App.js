@@ -10,7 +10,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 
 const App = ({data}) => {
-    const {posts, users, messages} = data
+    const {profilePage, messagesPage} = data
 
     return (
         <BrowserRouter>
@@ -18,8 +18,9 @@ const App = ({data}) => {
                 <Header/>
                 <Navbar/>
                 <div className="app-wrapper__content">
-                    <Route path="/profile" component={() => <Profile posts={posts}/>}/>
-                    <Route path="/dialogs" render={() => <Dialogs users={users} messages={messages}/>}/>
+                    <Route path="/profile" component={() => <Profile posts={profilePage.posts}/>}/>
+                    <Route path="/dialogs"
+                           render={() => <Dialogs users={messagesPage.users} messages={messagesPage.messages}/>}/>
                     <Route path="/news" component={() => <News/>}/>
                     <Route path="/music" component={() => <Music/>}/>
                     <Route path="/settings" component={() => <Settings/>}/>

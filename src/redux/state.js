@@ -1,5 +1,4 @@
-import {rerenderEntireTree} from "../render";
-
+let rerenderEntireTree
 const state = {
     profilePage: {
         posts: [
@@ -62,3 +61,5 @@ export const updateNewMessage = newText => {
     state.messagesPage.currentMessage = newText
     rerenderEntireTree(state);
 }
+
+export const subscribe = (observer) => rerenderEntireTree = observer

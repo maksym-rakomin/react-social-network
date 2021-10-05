@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 const state = {
     profilePage: {
         posts: [
@@ -7,6 +9,7 @@ const state = {
             {id: 4, message: 'test post 4', likesCount: 6},
             {id: 5, message: 'test post 5', likesCount: 1},
         ],
+        newPostText: 'social',
     },
     messagesPage: {
         messages: [
@@ -16,6 +19,7 @@ const state = {
             {id: 4, message: 'test message 4'},
             {id: 5, message: 'test message 5'},
         ],
+        currentMessage: '',
         users: [
             {id: 1, name: 'test 1'},
             {id: 2, name: 'test 2'},
@@ -28,11 +32,33 @@ const state = {
 
 export default state
 
-export const addPost = postMessage => {
+export const addPost = () => {
     const newPost = {
         id: Date.now(),
-        message: postMessage,
+        message: state.profilePage.newPostText,
         likesCount: 0,
     }
     state.profilePage.posts.push(newPost)
+    state.profilePage.newPostText = ''
+    rerenderEntireTree(state)
+}
+
+export const addMessage = () => {
+    const data = {
+        id: Date.now(),
+        message: state.messagesPage.currentMessage,
+    }
+    state.messagesPage.messages.push(data)
+    state.messagesPage.currentMessage = ''
+    rerenderEntireTree(state)
+}
+
+export const updateNewPostText = newText => {
+    state.profilePage.newPostText = newText
+    rerenderEntireTree(state);
+}
+
+export const updateNewMessage = newText => {
+    state.messagesPage.currentMessage = newText
+    rerenderEntireTree(state);
 }

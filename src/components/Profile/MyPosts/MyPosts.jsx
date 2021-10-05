@@ -2,21 +2,30 @@ import React from 'react'
 import c from "./MyPosts.module.css"
 import Post from "./Post/Post";
 
-const MyPosts = ({posts, addPost}) => {
-    const postElements = posts.map(post => <Post key={post.id} test={post.likesCount} message={post.message}/>)
+const MyPosts = (props) => {
+    const postElements = props.posts.map(post => <Post key={post.id} test={post.likesCount} message={post.message}/>)
     const newPostElement = React.createRef()
-    const addPostLocal = () => addPost(newPostElement.current.value)
+    const addPostLocal = () => props.addPost()
+    const onPostChange = () => props.updateNewPostText(newPostElement.current.value)
 
     return (
         <div className={c.myPosts}>
             <h3>my Posts</h3>
 
             <div>
-                <textarea ref={newPostElement} name="" id="" cols="60" rows="4"/>
+                <textarea
+                    onChange={onPostChange}
+                    ref={newPostElement}
+                    name=""
+                    id=""
+                    cols="60"
+                    rows="4"
+                    value={props.newPostText}
+                />
             </div>
 
             <div>
-                <button onClick={ addPostLocal }>add post</button>
+                <button onClick={addPostLocal}>add post</button>
             </div>
 
             <div>

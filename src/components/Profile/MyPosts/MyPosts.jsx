@@ -2,11 +2,11 @@ import React from 'react'
 import c from "./MyPosts.module.css"
 import Post from "./Post/Post";
 
-const MyPosts = (props) => {
-    const postElements = props.posts.map(post => <Post key={post.id} test={post.likesCount} message={post.message}/>)
+const MyPosts = ({addPost, posts, updateNewPostText, newPostText}) => {
+    const postElements = posts.map(post => <Post key={post.id} test={post.likesCount} message={post.message}/>)
     const newPostElement = React.createRef()
-    const addPostLocal = () => props.addPost()
-    const onPostChange = () => props.updateNewPostText(newPostElement.current.value)
+    const addPostLocal = () => addPost()
+    const onPostChange = () => updateNewPostText(newPostElement.current.value)
 
     return (
         <div className={c.myPosts}>
@@ -20,7 +20,7 @@ const MyPosts = (props) => {
                     id=""
                     cols="60"
                     rows="4"
-                    value={props.newPostText}
+                    value={newPostText}
                 />
             </div>
 
